@@ -12,7 +12,6 @@ public class GrpcServerService extends SimpleGrpc.SimpleImplBase {
 
     @Override
     public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
-        log.info("Hello " + req.getName());
 
         if (req.getName().startsWith("error")) {
             throw new IllegalArgumentException("Bad name: " + req.getName());

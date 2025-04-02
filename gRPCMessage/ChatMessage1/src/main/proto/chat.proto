@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.example.chatmessage1.grpc";
+option java_multiple_files = true;
+
+service ChatService {
+  // Bi-Directional Streaming RPC
+  rpc Chat(stream ChatMessage) returns (stream ChatMessageResponse);
+}
+
+message ChatMessage {
+  string sender = 1;
+  string content = 2;
+}
+
+message ChatMessageResponse {
+  string receivedMessage = 1;
+  string serverResponse = 2;
+}
