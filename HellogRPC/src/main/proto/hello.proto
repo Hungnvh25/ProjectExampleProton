@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package hellogrpc;
+option java_multiple_files = true;
+option java_package = "com.example.hellogrpc.grpc";
+option java_outer_classname = "HelloWorldProto";
+
+service Simple {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc StreamHello (HelloRequest) returns (stream HelloReply) {}
+  rpc AddNumbers (AddRequest) returns (AddReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
+
+message AddRequest {
+  int32 number1 = 1;
+  int32 number2 = 2;
+}
+
+message AddReply {
+  int32 sum = 1;
+}
