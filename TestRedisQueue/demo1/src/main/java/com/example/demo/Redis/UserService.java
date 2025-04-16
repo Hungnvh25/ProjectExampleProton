@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Redis;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,7 +43,7 @@ public class UserService {
         return "That bai";
     }
 
-    @Scheduled(fixedRate = 10000)
+//    @Scheduled(fixedRate = 10000)
     public void getUserAndSetAuto() throws JsonProcessingException {
         if (autoUpdateEnabled) {
             String userString = template.opsForValue().get(HASH_KEY_TIME);

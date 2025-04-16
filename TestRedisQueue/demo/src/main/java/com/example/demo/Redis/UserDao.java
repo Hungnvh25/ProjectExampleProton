@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Redis;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
