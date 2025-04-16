@@ -27,8 +27,6 @@ public class RedisConfig {
         configuration.setPort(6379);
 
         JedisPoolConfig poolConfig = new JedisPoolConfig();
-
-
         JedisClientConfiguration clientConfig = JedisClientConfiguration.builder()
                 .usePooling().poolConfig(poolConfig).build();
 

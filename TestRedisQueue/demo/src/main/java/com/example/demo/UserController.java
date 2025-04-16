@@ -24,9 +24,9 @@ public class UserController {
     }
 
     @PostMapping("/save/{key}")
-    public User save(@RequestBody User user,@PathVariable String key) throws JsonProcessingException {
+    public User save(@RequestBody User user, @PathVariable String key) throws JsonProcessingException {
 
-        User saveUser = userService.saveNewKey(user,key);
+        User saveUser = userService.saveNewKey(user, key);
 
         return saveUser;
     }
@@ -39,7 +39,7 @@ public class UserController {
 
 
     @PostMapping("/user/{id}")
-    public String save(@PathVariable String id)  {
+    public String save(@PathVariable String id) {
 
         String jsonUser = userService.findUserById(id);
 
@@ -48,12 +48,13 @@ public class UserController {
 
 
     @PostMapping("/userTime/{id}")
-    public String saveTime(@PathVariable String id)  {
+    public String saveTime(@PathVariable String id) {
 
-        String jsonUser = userService.findUserByKey( id);
+        String jsonUser = userService.findUserByKey(id);
 
         return jsonUser;
     }
+
     @PostMapping("/delete/{id}")
     public String delete(@PathVariable String id) {
 

@@ -3,13 +3,11 @@ package com.example.demo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.redis.core.RedisHash;
 
-import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User  {
+public class User {
     private String id;
     private String userName;
     private String message;
