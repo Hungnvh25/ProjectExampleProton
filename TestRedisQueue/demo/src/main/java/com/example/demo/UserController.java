@@ -43,7 +43,7 @@ public class UserController {
 
         String jsonUser = userService.findUserById(id);
 
-            return jsonUser;
+        return jsonUser;
     }
 
 

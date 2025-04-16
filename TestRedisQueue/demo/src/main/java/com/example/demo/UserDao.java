@@ -17,8 +17,8 @@ public class UserDao {
     @Autowired
     ObjectMapper objectMapper;
 
-    @Autowired
-    private RedisTemplate<String, String> template;
+        @Autowired
+        private RedisTemplate<String, String> template;
 
     public User save (User user) throws JsonProcessingException {
         String jsonUser = objectMapper.writeValueAsString(user);
@@ -29,7 +29,8 @@ public class UserDao {
     public User saveTime (User user) throws JsonProcessingException {
         String jsonUser = objectMapper.writeValueAsString(user);
 
-        template.opsForValue().set(HASH_KEY_TIME + user.getId(),jsonUser,10,TimeUnit.SECONDS);
+        template.opsForValue().set(HASH_KEY_TIME,jsonUser,30,TimeUnit.SECONDS);
+
         return user;
     }
 
@@ -46,7 +47,7 @@ public class UserDao {
     }
 
     public String findUserByKey (String id)  {
-        String stringUser = template.opsForValue().get(HASH_KEY_TIME+id);
+        String stringUser = template.opsForValue().get(HASH_KEY_TIME);
         return stringUser;
     }
 
